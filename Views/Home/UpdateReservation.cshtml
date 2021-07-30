@@ -1,0 +1,38 @@
+﻿@model ReservationInformation
+
+<form action="/Home/UpdateReservation" method="post" style="padding-left:25px; padding-right: 25px">
+   
+    <div class="mb-3" hidden>
+        <label class="form-label">Customer Name</label>
+        <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" value="@Model.id" name="id" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" value="@Model.customerName" name="customerName" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Reserved By</label>
+        <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" value="@Model.reservedBy" name="reservedBy" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">reservation Date</label>
+        <input class="form-control form-control-sm" id="datetime" name="reservationDate" type="date" value="@Model.reservationDate.ToString("yyyy-MM-dd")" aria-label=".form-control-sm example" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea class="form-control form-control-sm" rows="3" cols="40" name="notes" id="notes" aria-label=".form-control-sm example" required>@Model.notes</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Trip Name</label>
+        <input class="form-control form-control-sm" id="datetime" name="tripNAme" type="text" value="@Model.name" aria-label=".form-control-sm example" readonly>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary" id="submitedBTN">Update</button>
+</form>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<string>
+
+<form action="/Home/addNewReservation" method="post" style="padding-left:25px; padding-right: 25px">
+
+    <div class="mb-3">
+        <label class="form-label">Customer Name</label>
+        <input class="form-control form-control-sm" type="text" aria-label=".form-control-sm example" name="customerName" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">reservation Date</label>
+        <input class="form-control form-control-sm" id="datetime" name="reservationDate" type="date" aria-label=".form-control-sm example" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea class="form-control form-control-sm" rows="3" cols="40" name="notes" id="notes" aria-label=".form-control-sm example" required></textarea>
+    </div>
+
+
+
+    <div class="mb-3">
+        <div class="dropdown" style="padding-top : 25px">
+            <input class="btn btn-secondary dropdown-toggle" name="tripName" type="text" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" value="select Trip" readonly>
+   
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                @foreach (var tripName in Model)
+                {
+                    <li><a class="dropdown-item" onclick="enableButton('@tripName')">@tripName</a></li>
+                }
+             </ui>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="submitedBTN" disabled>Add</button>
+</form>
