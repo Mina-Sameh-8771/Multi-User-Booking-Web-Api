@@ -10,4 +10,4 @@ password : 1234
 
 After login you will see your reservations and edit or delete it 
 
-And you can book reservation too 
+And you can booking reservation too 
